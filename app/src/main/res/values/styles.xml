@@ -1,0 +1,48 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColor">@color/mine_shaft_app_default</item>
+        <!--app label font family-->
+        <item name="android:fontFamily">Hiragino Sans</item>
+
+        <!--for all xml background use white color-->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+
+    </style>
+
+    <!--text style-->
+    <style name="TextPaddingStyle">
+        <item name="android:fontFamily">Hiragino Sans</item>
+        <item name="android:padding">14dp</item>
+    </style>
+
+    <!--default style-->
+    <style name="Large.TextStyle" parent="TextPaddingStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Medium.TextStyle" parent="TextPaddingStyle">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Small.TextStyle" parent="TextPaddingStyle">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--button style-->
+    <style name="Button.White" parent="Medium.TextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/solid_roundedrect_gradient_red</item>
+    </style>
+
+</resources>

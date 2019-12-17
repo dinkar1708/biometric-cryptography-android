@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="cryptography.biometric.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_biometricCryptographyPayment"
+            app:destination="@id/biometricCryptographyPayment" />
+    </fragment>
+    <fragment
+        android:id="@+id/biometricCryptographyPayment"
+        android:name="cryptography.biometric.ui.biometric.BiometricCryptographyPaymentFragment"
+        android:label="fragment_biometric_cryptography_payment"
+        tools:layout="@layout/fragment_biometric_cryptography_payment">
+
+        <action
+            android:id="@+id/action_biometricCryptographyPayment_to_paymentVerificationFragment2"
+            app:destination="@id/paymentVerificationFragment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <argument
+            android:name="cardLast4Digit"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentVerificationFragment"
+        android:name="cryptography.biometric.ui.payment_verification.PaymentVerificationFragment"
+        android:label="fragment_payment_verification"
+        tools:layout="@layout/fragment_payment_verification">
+        <action
+            android:id="@+id/action_paymentVerificationFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/app_nav_graph"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="cardLast4Digit"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+    </fragment>
+</navigation>

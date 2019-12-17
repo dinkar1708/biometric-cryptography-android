@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--application color-->
+    <color name="colorPrimary">#FFCB74</color>
+    <color name="colorPrimaryDark">@color/orange_red</color>
+    <color name="colorAccent">#ff9f80</color>
+    <color name="orange_red">#FF8B63</color>
+    <color name="white">#ffffff</color>
+    <color name="mine_shaft_app_default">#333333</color>
+</resources>

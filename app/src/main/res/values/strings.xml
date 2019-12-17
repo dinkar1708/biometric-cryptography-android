@@ -1,0 +1,38 @@
+<resources>
+    <!--shared-->
+    <string name="app_name">biometric-cryptography-android</string>
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+    <string name="in_progress">Operation in progress…</string>
+    <string name="biometric_dialog_title">Payment</string>
+    <string name="biometric_dialog_subtitle">Biometric Cryptography Authentication</string>
+    <string name="biometric_dialog_desc">Scan the finger to authenticate…</string>
+    <string name="biometric_dialog_finger_not_enrolled">At least one fingerprint must be enrolled!</string>
+    <string name="biometric_dialog_hardware_not_supported">Biometric is not supported on this device!!</string>
+    <string name="biometric_dialog_negative_button">Cancel</string>
+    <string name="authenticate">Authenticate(Touch ID)</string>
+    <string name="card_number_format">Card Number: ****%s</string>
+    <string name="amount_format">Amount: %s$</string>
+    <string name="unexpected_error_can_not_generate_keypair">Unexpected Error! Can not generate key pair!</string>
+
+    <!--biometric authentication screen-->
+    <string name="home_title">Biometric Cryptography</string>
+    <string name="home_enter_amount_to_pay">Enter Amount to Pay.</string>
+    <string name="home_enter_amount">Please enter amount, Can not be empty</string>
+    <string name="home_choose_user_to_pay">Select User To PAY(Receive user token from server)</string>
+    <string name="home_receiving_token_from_server">Please wait, receiving token from server…</string>
+    <string name="home_amount">Amount</string>
+    <string name="home_biometric_ap_token_received">Token and Card Number Received : %s</string>
+
+    <!--biometric authentication screen-->
+    <string name="biometric_ap_title">Biometric Authentication</string>
+    <string name="biometric_ap_auth_success">Biometric Authentication Success</string>
+    <string name="biometric_ap_biometric_authenticate_in_progress">Please wait… Biometric authentication in progress…</string>
+    <string name="biometric_ap_verifying_signature">Please wait… Verifying signature…</string>
+    <string name="biometric_ap_finger_scan_authorize_and_do_payment">Biometric Authentication(TouchID) Scan Finger to complete the payment</string>
+
+    <!--payment verification  screen-->
+    <string name="payment_verification_title">Payment Verification</string>
+    <string name="payment_ver_transaction_completed_successfully">Transaction completed successfully.</string>
+    <string name="payment_ver_biometric_authentication_done">Biometric authentication, signature verification is done.</string>
+</resources>
