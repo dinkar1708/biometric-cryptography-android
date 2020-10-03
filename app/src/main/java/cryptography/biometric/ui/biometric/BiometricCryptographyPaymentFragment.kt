@@ -19,10 +19,10 @@ import cryptography.biometric.biometrickit.canAuthenticateUsingBiometric
 import cryptography.biometric.biometrickit.cryptography.CryptographyTechnique
 import cryptography.biometric.biometrickit.cryptography.SignatureCryptography.Companion.KEY_32ByteNonce
 import cryptography.biometric.databinding.FragmentBiometricCryptographyPaymentBinding
+import cryptography.biometric.ext.setTitle
+import cryptography.biometric.ext.showToast
+import cryptography.biometric.ext.showToastOnUi
 import cryptography.biometric.shared.BaseFragment
-import cryptography.biometric.shared.setTitle
-import cryptography.biometric.shared.showToast
-import cryptography.biometric.shared.showToastOnUi
 import cryptography.biometric.ui.biometric.data.PaymentData
 import cryptography.biometric.ui.biometric.data.PaymentMessage
 import cryptography.biometric.ui.biometric.data.VerifySignatureRequest

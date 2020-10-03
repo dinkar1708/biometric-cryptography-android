@@ -10,13 +10,14 @@ import javax.inject.Singleton
 
 
 /**
- * Application component for dagger
+ * Application component for dagger, scoped application wide
+ * Singleton - scope - single scope for application
  */
 @Singleton
 @Component(
     modules = [
-        ApplicationModule::class,
         AndroidSupportInjectionModule::class,
+        ApplicationModule::class,
         FragmentModule::class
     ]
 )
@@ -24,6 +25,6 @@ interface ApplicationComponent : AndroidInjector<CryptoApplication> {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance applicationContext: Context): ApplicationComponent
+        fun create(@BindsInstance context: Context): ApplicationComponent
     }
 }

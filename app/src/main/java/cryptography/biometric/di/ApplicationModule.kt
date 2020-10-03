@@ -30,8 +30,6 @@ object ApplicationModule {
     @Retention(AnnotationRetention.RUNTIME)
     annotation class CryptographyRemoteDataSource
 
-    //
-    @JvmStatic
     @Singleton
     @CryptographyRemoteDataSource
     @Provides
@@ -39,7 +37,6 @@ object ApplicationModule {
         return CryptographyRemoteDataSource(ni)
     }
 
-    @JvmStatic
     @Singleton
     @Provides
     fun provideDataBase(context: Context): CryptoDatabase {
@@ -50,19 +47,16 @@ object ApplicationModule {
         ).build()
     }
 
-    @JvmStatic
     @Singleton
     @Provides
     fun provideIoDispatcher() = Dispatchers.IO
 
-    @JvmStatic
     @Singleton
     @Provides
     fun provideRetrofit(): Retrofit {
         return RetrofitAPIService.getRetrofit()
     }
 
-    @JvmStatic
     @Singleton
     @Provides
     fun provideRetrofitService(retrofit: Retrofit): RetrofitAPIService {

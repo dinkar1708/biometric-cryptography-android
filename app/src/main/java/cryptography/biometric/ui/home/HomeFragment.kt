@@ -15,10 +15,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import cryptography.biometric.R
 import cryptography.biometric.databinding.FragmentHomeBinding
+import cryptography.biometric.ext.setTitle
+import cryptography.biometric.ext.showToast
+import cryptography.biometric.ext.showToastOnUi
 import cryptography.biometric.shared.BaseFragment
-import cryptography.biometric.shared.setTitle
 import cryptography.biometric.shared.showToast
-import cryptography.biometric.shared.showToastOnUi
 import cryptography.biometric.ui.home.data.GetUserTokenRequest
 import cryptography.biometric.ui.home.data.GetUserTokenResponse
 import kotlinx.android.synthetic.main.fragment_home.*

@@ -9,8 +9,8 @@ import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cryptography.biometric.R
+import cryptography.biometric.ext.setTitle
 import cryptography.biometric.shared.BaseFragment
-import cryptography.biometric.shared.setTitle
 import kotlinx.android.synthetic.main.fragment_payment_verification.view.*
 
 /**
