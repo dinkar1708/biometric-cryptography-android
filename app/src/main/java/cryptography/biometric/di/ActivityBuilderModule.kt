@@ -1,8 +1,8 @@
 package cryptography.biometric.di
 
-import cryptography.biometric.di.main.biometric.BiometricModuleBinds
+import cryptography.biometric.di.main.biometric.BiometricFragmentBuilderModule
 import cryptography.biometric.di.main.home.HomeFragmentBuilderModule
-import cryptography.biometric.di.main.home.HomeViewModelModule
+import cryptography.biometric.di.main.payment.PaymentFragmentBuilderModule
 import cryptography.biometric.di.splash.SplashModule
 import cryptography.biometric.ui.main.MainActivity
 import cryptography.biometric.ui.main.MainScope
@@ -37,7 +37,11 @@ abstract class ActivityBuilderModule {
 
     @MainScope
     // Specified modules should be available only in main activity scope
-    @ContributesAndroidInjector(modules = [HomeFragmentBuilderModule::class, HomeViewModelModule::class])
+    @ContributesAndroidInjector(
+        modules = [HomeFragmentBuilderModule::class,
+            BiometricFragmentBuilderModule::class,
+            PaymentFragmentBuilderModule::class]
+    )
     // sub component of system
     internal abstract fun bindMainActivity(): MainActivity
 

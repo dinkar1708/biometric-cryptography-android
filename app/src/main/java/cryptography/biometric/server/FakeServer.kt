@@ -49,11 +49,13 @@ class FakeServer {
                             PaymentMessage::class.java
                         )
                     Timber.d(
-                        "verifySignature data original value ${String(
-                            Base64Encoder().decode(
-                                msg.encryptedMessage
+                        "verifySignature data original value ${
+                            String(
+                                Base64Encoder().decode(
+                                    msg.encryptedMessage
+                                )
                             )
-                        )}"
+                        }"
                     )
                     return null
                 } else {

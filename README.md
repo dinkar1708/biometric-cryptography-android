@@ -16,7 +16,7 @@ Data source classes-
 Design MVVM
 
 Depedency Injection Design
-------------ApplicationComponent Singleton ---------------
+------------ApplicationComponent Singleton CryptographyRepository -------------------------------------------------
 ------------ActivityBuilderModule Module,  ApplicationModule Module, ViewModelProviderFactory Module ---------------
 ------------------------------Splash Component------------------------Main Component---------------------------------
 SplashActivity--------------------------------------------MainActivity--------------------------------------------

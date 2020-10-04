@@ -1,7 +1,5 @@
 package cryptography.biometric.biometrickit.cryptography
 
-import javax.inject.Inject
-
 /**
  * Supported by android keystore
  *  Android doesn't guarantee a particular provider for a given algorithm. Specifying a provider

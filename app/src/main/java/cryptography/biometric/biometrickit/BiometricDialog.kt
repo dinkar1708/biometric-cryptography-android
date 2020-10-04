@@ -7,7 +7,6 @@ import java.security.Signature
 import java.util.concurrent.Executors
 import javax.crypto.Cipher
 import javax.crypto.Mac
-import javax.inject.Inject
 
 /**
  * Biometric authentication using this dialog.

@@ -65,7 +65,7 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
     ): View? {
 
         setTitle(title = R.string.biometric_ap_title)
-        Log.d("test", "biometricDialog "+biometricDialog)
+        Log.d("test", "biometricDialog " + biometricDialog)
         viewDataBinding =
             DataBindingUtil.inflate(
                 inflater,

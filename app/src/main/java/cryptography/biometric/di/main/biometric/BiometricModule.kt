@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class BiometricModuleBinds {
+class BiometricModule {
 
     @BiometricScope
     @Provides

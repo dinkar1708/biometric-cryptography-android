@@ -2,10 +2,6 @@ package cryptography.biometric.di
 
 import android.content.Context
 import androidx.room.Room
-import cryptography.biometric.biometrickit.BiometricDialog
-import cryptography.biometric.biometrickit.BiometricDialogInterface
-import cryptography.biometric.biometrickit.cryptography.CryptographyProvider
-import cryptography.biometric.biometrickit.cryptography.CryptographyTechnique
 import cryptography.biometric.data.api.RetrofitAPIService
 import cryptography.biometric.data.db.CryptoDatabase
 import cryptography.biometric.data.source.CryptographyDafaultRepository
