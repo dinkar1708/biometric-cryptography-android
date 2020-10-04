@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/paymentVerificationFragment"
-        android:name="cryptography.biometric.ui.payment_verification.PaymentVerificationFragment"
+        android:name="cryptography.biometric.ui.verification.PaymentVerificationFragment"
         android:label="fragment_payment_verification"
         tools:layout="@layout/fragment_payment_verification">
         <action

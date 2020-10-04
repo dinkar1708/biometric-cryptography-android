@@ -13,6 +13,11 @@ src/main/java/cryptography/biometric/di
 Data source classes-
 /src/main/java/cryptography/biometric/data/source
  
+Design MVVM
+
+
+
+
 ## Technology used -
 Android KTX, Architecture components help you design robust, testable and maintainable apps.Navigation
 Handle everything needed for in-app navigation

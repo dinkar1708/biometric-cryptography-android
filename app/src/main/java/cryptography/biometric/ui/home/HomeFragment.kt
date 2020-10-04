@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import cryptography.biometric.R
 import cryptography.biometric.databinding.FragmentHomeBinding
@@ -19,9 +18,9 @@ import cryptography.biometric.ext.setTitle
 import cryptography.biometric.ext.showToast
 import cryptography.biometric.ext.showToastOnUi
 import cryptography.biometric.shared.BaseFragment
-import cryptography.biometric.shared.showToast
 import cryptography.biometric.ui.home.data.GetUserTokenRequest
 import cryptography.biometric.ui.home.data.GetUserTokenResponse
+import cryptography.biometric.viewmodels.ViewModelProviderFactory
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.progress_layout.*
 import timber.log.Timber
@@ -30,8 +29,12 @@ import javax.inject.Inject
 /**
  */
 class HomeFragment : BaseFragment() {
+//    @Inject
+//    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: ViewModelProviderFactory
+
     private val viewModel by viewModels<HomeFragmentViewModel> { viewModelFactory }
     private lateinit var viewDataBinding: FragmentHomeBinding
 

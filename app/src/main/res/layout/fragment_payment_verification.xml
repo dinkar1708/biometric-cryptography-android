@@ -46,7 +46,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="@dimen/fragments_content_padding"
-                tools:context=".ui.payment_verification.PaymentVerificationFragment">
+                tools:context=".ui.verification.PaymentVerificationFragment">
 
                 <TextView
                     style="@style/Medium.TextStyle"

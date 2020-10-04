@@ -35,4 +35,6 @@
     <string name="payment_verification_title">Payment Verification</string>
     <string name="payment_ver_transaction_completed_successfully">Transaction completed successfully.</string>
     <string name="payment_ver_biometric_authentication_done">Biometric authentication, signature verification is done.</string>
+    <!--Splash-->
+    <string name="title_activity_splash">@string/app_name</string>
 </resources>

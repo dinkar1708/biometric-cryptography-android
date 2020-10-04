@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.gson.Gson
@@ -26,6 +25,7 @@ import cryptography.biometric.shared.BaseFragment
 import cryptography.biometric.ui.biometric.data.PaymentData
 import cryptography.biometric.ui.biometric.data.PaymentMessage
 import cryptography.biometric.ui.biometric.data.VerifySignatureRequest
+import cryptography.biometric.viewmodels.ViewModelProviderFactory
 import kotlinx.android.synthetic.main.fragment_biometric_cryptography_payment.*
 import kotlinx.android.synthetic.main.fragment_biometric_cryptography_payment.view.*
 import kotlinx.android.synthetic.main.progress_layout.*
@@ -41,14 +41,16 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
 
     private lateinit var paymentMessage: PaymentMessage
     private var asymmetricKey: KeyPair? = null
+
     @Inject
     lateinit var biometricDialog: BiometricDialog
 
     @Inject
     lateinit var cryptographyTechnique: CryptographyTechnique
 
+
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: ViewModelProviderFactory
     private val viewModel by viewModels<BiometricCryptographyPaymentViewModel> { viewModelFactory }
 
     private lateinit var viewDataBinding: FragmentBiometricCryptographyPaymentBinding
@@ -91,7 +93,9 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
         setUpModelView()
 
         // store public key
-        viewModel.storePublicKey(asymmetricKey!!.public)
+        asymmetricKey?.let {
+            viewModel.storePublicKey(it.public)
+        }
 
         return viewDataBinding.root
     }
@@ -153,9 +157,11 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
 
         paymentMessage = PaymentMessage(
             userToken = args.token,
-            ephemeralPublicKey = cryptographyTechnique.signature().encoder().encode(asymmetricKey!!.public.encoded),
+            ephemeralPublicKey = cryptographyTechnique.signature().encoder()
+                .encode(asymmetricKey!!.public.encoded),
             tagNonce32Byte = KEY_32ByteNonce,
-            encryptedMessage = cryptographyTechnique.signature().encoder().encode(viewDataBinding.amount.text.toString().toByteArray())
+            encryptedMessage = cryptographyTechnique.signature().encoder()
+                .encode(viewDataBinding.amount.text.toString().toByteArray())
         )
 
         // Inflate the layout for this fragment

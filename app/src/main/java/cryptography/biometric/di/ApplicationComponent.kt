@@ -17,8 +17,9 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
+        ViewModelFactoryModule::class,
         ApplicationModule::class,
-        FragmentModule::class
+        ActivityBuilderModule::class,
     ]
 )
 interface ApplicationComponent : AndroidInjector<CryptoApplication> {

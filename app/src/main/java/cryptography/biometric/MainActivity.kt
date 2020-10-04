@@ -2,12 +2,12 @@ package cryptography.biometric
 
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import cryptography.biometric.common.BaseActivity
 
 /**
  * Single activity based application
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
