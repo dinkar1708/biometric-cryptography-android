@@ -1,22 +1,25 @@
 package cryptography.biometric.di.main.biometric
 
 import cryptography.biometric.biometrickit.BiometricDialog
-import cryptography.biometric.biometrickit.BiometricDialogInterface
-import cryptography.biometric.biometrickit.cryptography.CryptographyProvider
 import cryptography.biometric.biometrickit.cryptography.CryptographyTechnique
-import cryptography.biometric.ui.main.biometric.BiometricScope
+import cryptography.biometric.ui.main.MainScope
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class BiometricModuleBinds {
+class BiometricModuleBinds {
 
-    @BiometricScope
-    @Binds
-    abstract fun bindBiometricDialog(biometricDialog: BiometricDialog): BiometricDialogInterface
+    @MainScope
+    @Provides
+    fun bindBiometricDialog(): BiometricDialog {
+        return BiometricDialog()
+    }
 
-    @BiometricScope
+    @MainScope
     @Binds
-    abstract fun bindCryptographyTechnique(cryptographyTechnique: CryptographyTechnique): CryptographyProvider
+    fun bindCryptographyTechnique(): CryptographyTechnique {
+        return CryptographyTechnique()
+    }
 
 }

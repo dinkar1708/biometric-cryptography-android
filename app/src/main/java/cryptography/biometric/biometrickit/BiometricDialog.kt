@@ -12,8 +12,7 @@ import javax.inject.Inject
 /**
  * Biometric authentication using this dialog.
  */
-class BiometricDialog @Inject constructor(
-) : BiometricDialogInterface {
+class BiometricDialog : BiometricDialogInterface {
 
     private var title: CharSequence = "Title"
     private var subTitle: CharSequence = "SubTitle"

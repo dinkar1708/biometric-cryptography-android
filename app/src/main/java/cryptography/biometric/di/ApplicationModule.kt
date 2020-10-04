@@ -71,12 +71,4 @@ abstract class ApplicationModuleBinds {
     @Binds
     abstract fun bindRepository(repo: CryptographyDafaultRepository): CryptographyRepository
 
-    @Singleton
-    @Binds
-    abstract fun bindBiometricDialog(biometricDialog: BiometricDialog): BiometricDialogInterface
-
-    @Singleton
-    @Binds
-    abstract fun bindCryptographyTechnique(cryptographyTechnique: CryptographyTechnique): CryptographyProvider
-
 }

@@ -35,9 +35,9 @@ interface Factory extends AndroidInjector.Factory<MainActivity> {}
 @Module
 abstract class ActivityBuilderModule {
 
-//    @MainScope
+    @MainScope
     // Specified modules should be available only in main activity scope
-    @ContributesAndroidInjector(modules = [HomeFragmentBuilderModule::class, HomeViewModelModule::class])
+    @ContributesAndroidInjector(modules = [HomeFragmentBuilderModule::class, HomeViewModelModule::class, BiometricModuleBinds::class])
     // sub component of system
     internal abstract fun bindMainActivity(): MainActivity
 

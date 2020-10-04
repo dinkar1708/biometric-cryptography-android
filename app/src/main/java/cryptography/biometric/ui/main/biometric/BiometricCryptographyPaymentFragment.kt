@@ -3,6 +3,7 @@ package cryptography.biometric.ui.main.biometric
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,7 +65,7 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
     ): View? {
 
         setTitle(title = R.string.biometric_ap_title)
-
+        Log.d("test", "biometricDialog "+biometricDialog)
         viewDataBinding =
             DataBindingUtil.inflate(
                 inflater,

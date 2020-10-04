@@ -3,6 +3,7 @@ package cryptography.biometric.ui.main.home
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import cryptography.biometric.R
+import cryptography.biometric.biometrickit.BiometricDialog
 import cryptography.biometric.databinding.FragmentHomeBinding
 import cryptography.biometric.ext.setTitle
 import cryptography.biometric.ext.showToast
@@ -35,17 +37,12 @@ class HomeFragment : BaseFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
 
-//    @Inject
-//    lateinit var biometricDialog: BiometricDialog
+    @Inject
+    lateinit var biometricDialog: BiometricDialog
 //
 //    @Inject
 //    lateinit var cryptographyTechnique: CryptographyTechnique
 
-
-    // below produce error because SplashModel is not scoped only for splash module
-    // /biometric-cryptography-android/app/build/tmp/kapt3/stubs/debug/cryptography/biometric/di/ApplicationComponent.java:12: error: [Dagger/MissingBinding] cryptography.biometric.ui.splash.SplashModel cannot be provided without an @Inject constructor or an @Provides-annotated method.
-//    @Inject
-//    lateinit var splashModel: SplashModel
 
     private val viewModel by viewModels<HomeFragmentViewModel> { viewModelFactory }
     private lateinit var viewDataBinding: FragmentHomeBinding
@@ -64,7 +61,7 @@ class HomeFragment : BaseFragment() {
             title = R.string.home_title, isEnableBackButton = false
         )
 
-//        Timber.d("splashModel id $splashModel")
+        Log.d("test", "biometricDialog "+biometricDialog)
 
         viewDataBinding =
             DataBindingUtil.inflate(
