@@ -22,7 +22,7 @@ interface CryptographyProvider {
     fun signature(): SignatureCryptography
 }
 
-class CryptographyTechnique @Inject constructor() : CryptographyProvider {
+class CryptographyTechnique : CryptographyProvider {
     override fun cipher() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

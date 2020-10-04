@@ -37,7 +37,7 @@ abstract class ActivityBuilderModule {
 
     @MainScope
     // Specified modules should be available only in main activity scope
-    @ContributesAndroidInjector(modules = [HomeFragmentBuilderModule::class, HomeViewModelModule::class, BiometricModuleBinds::class])
+    @ContributesAndroidInjector(modules = [HomeFragmentBuilderModule::class, HomeViewModelModule::class])
     // sub component of system
     internal abstract fun bindMainActivity(): MainActivity
 

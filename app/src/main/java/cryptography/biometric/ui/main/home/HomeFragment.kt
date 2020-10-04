@@ -37,8 +37,8 @@ class HomeFragment : BaseFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
 
-    @Inject
-    lateinit var biometricDialog: BiometricDialog
+//    @Inject
+//    lateinit var biometricDialog: BiometricDialog
 //
 //    @Inject
 //    lateinit var cryptographyTechnique: CryptographyTechnique
@@ -61,7 +61,7 @@ class HomeFragment : BaseFragment() {
             title = R.string.home_title, isEnableBackButton = false
         )
 
-        Log.d("test", "biometricDialog "+biometricDialog)
+//        Log.d("test", "biometricDialog "+biometricDialog)
 
         viewDataBinding =
             DataBindingUtil.inflate(

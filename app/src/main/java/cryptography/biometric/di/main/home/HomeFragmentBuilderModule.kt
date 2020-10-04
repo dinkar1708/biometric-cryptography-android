@@ -19,15 +19,15 @@ abstract class HomeFragmentBuilderModule {
     // adding as sub module of HomeFragment, this view model can not be used other that HomeFragment,
     // if needed to use it has to include in that module
     // HomeViewModelModule - sub component available for home fragment only
-//    @HomeScope
+    @HomeScope
     @ContributesAndroidInjector()
     internal abstract fun addHomeFragment(): HomeFragment
 
-//    @BiometricScope
-    @ContributesAndroidInjector()
+    @BiometricScope
+    @ContributesAndroidInjector(modules = [BiometricModuleBinds::class])
     internal abstract fun addBiometricCryptographyPayment(): BiometricCryptographyPaymentFragment
 
-//    @VerificationScope
+    @VerificationScope
     @ContributesAndroidInjector()
     internal abstract fun addPaymentVerificationFragment(): PaymentVerificationFragment
 
