@@ -1,4 +1,4 @@
-package cryptography.biometric.ui.home
+package cryptography.biometric.ui.main.home
 
 
 import android.os.Bundle
@@ -18,8 +18,8 @@ import cryptography.biometric.ext.setTitle
 import cryptography.biometric.ext.showToast
 import cryptography.biometric.ext.showToastOnUi
 import cryptography.biometric.shared.BaseFragment
-import cryptography.biometric.ui.home.data.GetUserTokenRequest
-import cryptography.biometric.ui.home.data.GetUserTokenResponse
+import cryptography.biometric.ui.main.home.data.GetUserTokenRequest
+import cryptography.biometric.ui.main.home.data.GetUserTokenResponse
 import cryptography.biometric.viewmodels.ViewModelProviderFactory
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.progress_layout.*
@@ -34,6 +34,18 @@ class HomeFragment : BaseFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
+
+//    @Inject
+//    lateinit var biometricDialog: BiometricDialog
+//
+//    @Inject
+//    lateinit var cryptographyTechnique: CryptographyTechnique
+
+
+    // below produce error because SplashModel is not scoped only for splash module
+    // /biometric-cryptography-android/app/build/tmp/kapt3/stubs/debug/cryptography/biometric/di/ApplicationComponent.java:12: error: [Dagger/MissingBinding] cryptography.biometric.ui.splash.SplashModel cannot be provided without an @Inject constructor or an @Provides-annotated method.
+//    @Inject
+//    lateinit var splashModel: SplashModel
 
     private val viewModel by viewModels<HomeFragmentViewModel> { viewModelFactory }
     private lateinit var viewDataBinding: FragmentHomeBinding
@@ -51,6 +63,8 @@ class HomeFragment : BaseFragment() {
         setTitle(
             title = R.string.home_title, isEnableBackButton = false
         )
+
+//        Timber.d("splashModel id $splashModel")
 
         viewDataBinding =
             DataBindingUtil.inflate(
@@ -131,7 +145,7 @@ class HomeFragment : BaseFragment() {
     private fun initSpinner() {
         // dummy values used - this should be generated using User.kt file
         arrayOf("Bob", "Alice", "Tim", "Josh", "").apply {
-            ArrayAdapter(activity!!, android.R.layout.simple_spinner_item, this).apply {
+            ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, this).apply {
                 this.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 viewDataBinding.spinner.adapter = this
                 viewDataBinding.spinner.onItemSelectedListener =

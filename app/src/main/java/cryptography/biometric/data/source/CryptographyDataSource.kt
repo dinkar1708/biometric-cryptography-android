@@ -2,10 +2,10 @@ package cryptography.biometric.data.source
 
 import cryptography.biometric.data.DataResult
 import cryptography.biometric.data.api.ApiBaseResponse
-import cryptography.biometric.ui.biometric.data.VerifySignatureRequest
-import cryptography.biometric.ui.biometric.data.VerifySignatureResponse
-import cryptography.biometric.ui.home.data.GetUserTokenRequest
-import cryptography.biometric.ui.home.data.GetUserTokenResponse
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureRequest
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureResponse
+import cryptography.biometric.ui.main.home.data.GetUserTokenRequest
+import cryptography.biometric.ui.main.home.data.GetUserTokenResponse
 import java.security.PublicKey
 
 /**

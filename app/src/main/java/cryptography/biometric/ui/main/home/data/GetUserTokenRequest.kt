@@ -1,4 +1,4 @@
-package cryptography.biometric.ui.home.data
+package cryptography.biometric.ui.main.home.data
 
 /**
  */

@@ -3,10 +3,10 @@ package cryptography.biometric.data.api
 import com.google.gson.GsonBuilder
 import cryptography.biometric.BuildConfig
 import cryptography.biometric.data.DataResult
-import cryptography.biometric.ui.biometric.data.VerifySignatureRequest
-import cryptography.biometric.ui.biometric.data.VerifySignatureResponse
-import cryptography.biometric.ui.home.data.GetUserTokenRequest
-import cryptography.biometric.ui.home.data.GetUserTokenResponse
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureRequest
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureResponse
+import cryptography.biometric.ui.main.home.data.GetUserTokenRequest
+import cryptography.biometric.ui.main.home.data.GetUserTokenResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package cryptography.biometric.ui.biometric.data
+package cryptography.biometric.ui.main.biometric.data
 
 import cryptography.biometric.data.api.ApiBaseResponse
 

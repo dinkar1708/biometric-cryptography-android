@@ -1,4 +1,4 @@
-package cryptography.biometric.ui.verification
+package cryptography.biometric.ui.main.verification
 
 
 import android.os.Bundle

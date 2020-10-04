@@ -1,9 +1,9 @@
-package cryptography.biometric.di.home
+package cryptography.biometric.di.main.home
 
 import androidx.lifecycle.ViewModel
 import cryptography.biometric.di.ViewModelKey
-import cryptography.biometric.ui.biometric.BiometricCryptographyPaymentViewModel
-import cryptography.biometric.ui.home.HomeFragmentViewModel
+import cryptography.biometric.ui.main.biometric.BiometricCryptographyPaymentViewModel
+import cryptography.biometric.ui.main.home.HomeFragmentViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

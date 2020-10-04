@@ -1,4 +1,4 @@
-package cryptography.biometric.di.home
+package cryptography.biometric.ui.main.home
 
 import javax.inject.Scope
 

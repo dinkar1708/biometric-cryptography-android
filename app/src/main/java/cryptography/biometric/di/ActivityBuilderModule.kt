@@ -1,10 +1,13 @@
 package cryptography.biometric.di
 
-import cryptography.biometric.MainActivity
-import cryptography.biometric.di.home.HomeFragmentBuilderModule
-import cryptography.biometric.di.home.HomeScope
-import cryptography.biometric.di.home.HomeViewModelModule
+import cryptography.biometric.di.main.biometric.BiometricModuleBinds
+import cryptography.biometric.di.main.home.HomeFragmentBuilderModule
+import cryptography.biometric.di.main.home.HomeViewModelModule
+import cryptography.biometric.di.splash.SplashModule
+import cryptography.biometric.ui.main.MainActivity
+import cryptography.biometric.ui.main.MainScope
 import cryptography.biometric.ui.splash.SplashActivity
+import cryptography.biometric.ui.splash.SplashScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -32,13 +35,15 @@ interface Factory extends AndroidInjector.Factory<MainActivity> {}
 @Module
 abstract class ActivityBuilderModule {
 
-    @HomeScope
+//    @MainScope
     // Specified modules should be available only in main activity scope
     @ContributesAndroidInjector(modules = [HomeFragmentBuilderModule::class, HomeViewModelModule::class])
     // sub component of system
     internal abstract fun bindMainActivity(): MainActivity
 
-    @ContributesAndroidInjector()// define module here
+    // SplashModule module should be available in SplashScope
+    @SplashScope
+    @ContributesAndroidInjector(modules = [SplashModule::class])
     // sub component of system
     internal abstract fun bindSplashActivity(): SplashActivity
 }
