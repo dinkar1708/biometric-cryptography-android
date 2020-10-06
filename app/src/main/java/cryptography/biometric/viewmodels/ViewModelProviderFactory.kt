@@ -6,7 +6,8 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 /**
- * ViewModelFactory which uses Dagger to create the instances.
+ * ViewModelFactory which uses Dagger to create the instances of view models
+ * Inside view model constructor injection can be done ie. View model can inject external dependency in their constructor
  */
 class ViewModelProviderFactory @Inject constructor(
     private val creators: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>

@@ -11,43 +11,33 @@ import cryptography.biometric.ui.splash.SplashScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-/**
- * sub component
- * can se in generated code
- * kapt
-debug
-databinding
-biometric
-biometrickit
-data
-databinding
-di
-home
-ActivityBuilderModule_BindMainActivity$app_debug
-
-@Subcomponent
-public interface MainActivitySubcomponent extends AndroidInjector<MainActivity> {
-@Subcomponent.Factory
-interface Factory extends AndroidInjector.Factory<MainActivity> {}
-}
-
+/*
+ sub component in application
  */
 @Module
 abstract class ActivityBuilderModule {
 
     @MainScope
-    // Specified modules should be available only in main activity scope
+    // Specified modules should be available only in MainScope
     @ContributesAndroidInjector(
         modules = [HomeFragmentBuilderModule::class,
             BiometricFragmentBuilderModule::class,
             PaymentFragmentBuilderModule::class]
     )
     // sub component of system
+    /**
+     * Below is generated code, just to check
+    @MainScope
+    public interface MainActivitySubcomponent extends AndroidInjector<MainActivity> {
+    @Subcomponent.Factory
+    interface Factory extends AndroidInjector.Factory<MainActivity> {}
+    }
+     */
     internal abstract fun bindMainActivity(): MainActivity
 
     // SplashModule module should be available in SplashScope
     @SplashScope
     @ContributesAndroidInjector(modules = [SplashModule::class])
-    // sub component of system
+    // sub component of application
     internal abstract fun bindSplashActivity(): SplashActivity
 }

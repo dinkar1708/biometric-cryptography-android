@@ -15,12 +15,13 @@ Data source classes-
  
 Design MVVM
 
-Depedency Injection Design
-------------ApplicationComponent Singleton CryptographyRepository -------------------------------------------------
-------------ActivityBuilderModule Module,  ApplicationModule Module, ViewModelProviderFactory Module ---------------
-------------------------------Splash Component------------------------Main Component---------------------------------
-SplashActivity--------------------------------------------MainActivity--------------------------------------------
--------------------------------------------------------home---------------biometric------------verification----------
+Dependency Injection Design
+
+------------ApplicationComponent - Singleton (CryptographyRepository)-------------------------------------------------
+------------AndroidInjectionModule Module,  ViewModelFactoryModule Module, ApplicationModule Module , ActivityBuilderModule Module ---------------
+------------------------------SplashActivitySubcomponent------------------------MainActivitySubcomponent---------------------------------
+SplashActivity--------------------------------------    ---------------------MainActivity--------------------------------------------
+----------------------------------------------------    ---HomeFragmentSubcomponent---------------BiometricCryptographyPaymentFragmentSubcomponent------------PaymentVerificationFragmentSubcomponent----------
 
 
 

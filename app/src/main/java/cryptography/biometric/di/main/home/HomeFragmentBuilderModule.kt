@@ -11,9 +11,8 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class HomeFragmentBuilderModule {
 
-    // adding as sub module of HomeFragment, this view model can not be used other that HomeFragment,
-    // if needed to use it has to include in that module
-    // HomeViewModelModule - sub component available for home fragment only
+    // ContributesAndroidInjector - creates sub component for HomeFragment named HomeFragmentSubcomponent
+    // HomeViewModelModule - sub component available for home fragment only because of HomeScope
     @HomeScope
     @ContributesAndroidInjector(modules = [HomeViewModelModule::class])
     internal abstract fun addHomeFragment(): HomeFragment

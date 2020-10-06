@@ -11,13 +11,14 @@ import cryptography.biometric.common.BaseActivity
 class MainActivity : BaseActivity() {
     // below produce error because SplashModel is not scoped only for splash module
     // biometric-cryptography-android/app/build/tmp/kapt3/stubs/debug/cryptography/biometric/di/ApplicationComponent.java:12: error: [Dagger/MissingBinding] cryptography.biometric.ui.splash.SplashModel cannot be provided without an @Inject constructor or an @Provides-annotated method.
-//    @Inject
-//    lateinit var splashModel: SplashModel
+    /*
+    @Inject
+    lateinit var splashModel: SplashModel
+    */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
