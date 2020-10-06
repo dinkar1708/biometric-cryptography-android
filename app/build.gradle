@@ -39,6 +39,12 @@ android {
         jvmTarget = "1.8"
     }
 
+    /*	[CIRCULAR REFERENCE:com.android.tools.r8.a: Invoke-customs are only supported starting with Android O (--min-api 26)]*/
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     // Always show the result of every unit test, even if it passes.
     testOptions.unitTests {
         includeAndroidResources = true

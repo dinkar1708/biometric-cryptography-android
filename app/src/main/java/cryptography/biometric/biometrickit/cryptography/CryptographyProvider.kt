@@ -1,7 +1,5 @@
 package cryptography.biometric.biometrickit.cryptography
 
-import javax.inject.Inject
-
 /**
  * Supported by android keystore
  *  Android doesn't guarantee a particular provider for a given algorithm. Specifying a provider
@@ -22,7 +20,7 @@ interface CryptographyProvider {
     fun signature(): SignatureCryptography
 }
 
-class CryptographyTechnique @Inject constructor() : CryptographyProvider {
+class CryptographyTechnique : CryptographyProvider {
     override fun cipher() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

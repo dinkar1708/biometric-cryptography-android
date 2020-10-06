@@ -7,13 +7,11 @@ import java.security.Signature
 import java.util.concurrent.Executors
 import javax.crypto.Cipher
 import javax.crypto.Mac
-import javax.inject.Inject
 
 /**
  * Biometric authentication using this dialog.
  */
-class BiometricDialog @Inject constructor(
-) : BiometricDialogInterface {
+class BiometricDialog : BiometricDialogInterface {
 
     private var title: CharSequence = "Title"
     private var subTitle: CharSequence = "SubTitle"

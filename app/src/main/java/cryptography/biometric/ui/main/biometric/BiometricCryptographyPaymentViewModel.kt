@@ -1,4 +1,4 @@
-package cryptography.biometric.ui.home
+package cryptography.biometric.ui.main.biometric
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -6,24 +6,34 @@ import androidx.lifecycle.viewModelScope
 import cryptography.biometric.data.DataResult
 import cryptography.biometric.data.api.ApiState
 import cryptography.biometric.data.source.CryptographyRepository
-import cryptography.biometric.ui.home.data.GetUserTokenRequest
-import cryptography.biometric.ui.home.data.GetUserTokenResponse
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureRequest
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureResponse
 import kotlinx.coroutines.launch
+import java.security.PublicKey
 import javax.inject.Inject
 
-class HomeFragmentViewModel @Inject constructor(private val repository: CryptographyRepository) :
+class BiometricCryptographyPaymentViewModel @Inject constructor(private val repository: CryptographyRepository) :
     ViewModel() {
 
     private val _resultLiveData =
-        MutableLiveData<ApiState<GetUserTokenResponse>>()
+        MutableLiveData<ApiState<VerifySignatureResponse>>()
 
-    fun getResultLiveDataState(): MutableLiveData<ApiState<GetUserTokenResponse>> =
+    fun getResultLiveDataState(): MutableLiveData<ApiState<VerifySignatureResponse>> =
         _resultLiveData
 
     /**
-     * get user token from server for starting the transaction
+     * store public key
      */
-    fun getUserToken(request: GetUserTokenRequest) {
+    fun storePublicKey(request: PublicKey) {
+        viewModelScope.launch {
+            repository.sendPublicKey(request)
+        }
+    }
+
+    /**
+     * verify the message
+     */
+    fun verifyMessage(request: VerifySignatureRequest) {
         // show progress
         _resultLiveData.postValue(
             ApiState(
@@ -33,7 +43,7 @@ class HomeFragmentViewModel @Inject constructor(private val repository: Cryptogr
         // calling from view model scope
         viewModelScope.launch {
             // suspend function call
-            val result = repository.getUserToken(
+            val result = repository.verifySignature(
                 request
             )
             // check api result and update the live data
@@ -51,7 +61,7 @@ class HomeFragmentViewModel @Inject constructor(private val repository: Cryptogr
                     }
                 )
             } else {
-                // this should be actual code
+
                 _resultLiveData.postValue(
                     ApiState(
                         error = result.toString()

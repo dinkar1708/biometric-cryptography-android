@@ -12,7 +12,7 @@
 
         <variable
             name="viewModel"
-            type="cryptography.biometric.ui.biometric.BiometricCryptographyPaymentViewModel" />
+            type="cryptography.biometric.ui.main.biometric.BiometricCryptographyPaymentViewModel" />
     </data>
 
     <ScrollView

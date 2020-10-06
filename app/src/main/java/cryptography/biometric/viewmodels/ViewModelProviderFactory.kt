@@ -1,18 +1,15 @@
-package cryptography.biometric.di
+package cryptography.biometric.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import dagger.Binds
-import dagger.MapKey
-import dagger.Module
 import javax.inject.Inject
 import javax.inject.Provider
-import kotlin.reflect.KClass
 
 /**
- * ViewModelFactory which uses Dagger to create the instances.
+ * ViewModelFactory which uses Dagger to create the instances of view models
+ * Inside view model constructor injection can be done ie. View model can inject external dependency in their constructor
  */
-class CryptoViewModelFactory @Inject constructor(
+class ViewModelProviderFactory @Inject constructor(
     private val creators: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -36,18 +33,3 @@ class CryptoViewModelFactory @Inject constructor(
         }
     }
 }
-
-@Module
-internal abstract class ViewModelBuilder {
-    @Binds
-    internal abstract fun bindViewModelFactory(
-        factory: CryptoViewModelFactory
-    ): ViewModelProvider.Factory
-}
-
-@Target(
-    AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER
-)
-@Retention(AnnotationRetention.RUNTIME)
-@MapKey
-annotation class ViewModelKey(val value: KClass<out ViewModel>)

@@ -2,8 +2,8 @@ package cryptography.biometric.server
 
 import com.google.gson.Gson
 import cryptography.biometric.biometrickit.encodingdecoding.Base64Encoder
-import cryptography.biometric.ui.biometric.data.PaymentData
-import cryptography.biometric.ui.biometric.data.PaymentMessage
+import cryptography.biometric.ui.main.biometric.data.PaymentData
+import cryptography.biometric.ui.main.biometric.data.PaymentMessage
 import timber.log.Timber
 import java.security.InvalidKeyException
 import java.security.PublicKey
@@ -49,11 +49,13 @@ class FakeServer {
                             PaymentMessage::class.java
                         )
                     Timber.d(
-                        "verifySignature data original value ${String(
-                            Base64Encoder().decode(
-                                msg.encryptedMessage
+                        "verifySignature data original value ${
+                            String(
+                                Base64Encoder().decode(
+                                    msg.encryptedMessage
+                                )
                             )
-                        )}"
+                        }"
                     )
                     return null
                 } else {

@@ -1,15 +1,15 @@
-package cryptography.biometric.ui.biometric
+package cryptography.biometric.ui.main.biometric
 
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.gson.Gson
@@ -23,11 +23,11 @@ import cryptography.biometric.ext.setTitle
 import cryptography.biometric.ext.showToast
 import cryptography.biometric.ext.showToastOnUi
 import cryptography.biometric.shared.BaseFragment
-import cryptography.biometric.ui.biometric.data.PaymentData
-import cryptography.biometric.ui.biometric.data.PaymentMessage
-import cryptography.biometric.ui.biometric.data.VerifySignatureRequest
+import cryptography.biometric.ui.main.biometric.data.PaymentData
+import cryptography.biometric.ui.main.biometric.data.PaymentMessage
+import cryptography.biometric.ui.main.biometric.data.VerifySignatureRequest
+import cryptography.biometric.viewmodels.ViewModelProviderFactory
 import kotlinx.android.synthetic.main.fragment_biometric_cryptography_payment.*
-import kotlinx.android.synthetic.main.fragment_biometric_cryptography_payment.view.*
 import kotlinx.android.synthetic.main.progress_layout.*
 import timber.log.Timber
 import java.security.KeyPair
@@ -41,14 +41,16 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
 
     private lateinit var paymentMessage: PaymentMessage
     private var asymmetricKey: KeyPair? = null
+
     @Inject
     lateinit var biometricDialog: BiometricDialog
 
     @Inject
     lateinit var cryptographyTechnique: CryptographyTechnique
 
+
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: ViewModelProviderFactory
     private val viewModel by viewModels<BiometricCryptographyPaymentViewModel> { viewModelFactory }
 
     private lateinit var viewDataBinding: FragmentBiometricCryptographyPaymentBinding
@@ -63,7 +65,7 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
     ): View? {
 
         setTitle(title = R.string.biometric_ap_title)
-
+        Log.d("test", "biometricDialog " + biometricDialog)
         viewDataBinding =
             DataBindingUtil.inflate(
                 inflater,
@@ -91,7 +93,9 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
         setUpModelView()
 
         // store public key
-        viewModel.storePublicKey(asymmetricKey!!.public)
+        asymmetricKey?.let {
+            viewModel.storePublicKey(it.public)
+        }
 
         return viewDataBinding.root
     }
@@ -153,18 +157,20 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
 
         paymentMessage = PaymentMessage(
             userToken = args.token,
-            ephemeralPublicKey = cryptographyTechnique.signature().encoder().encode(asymmetricKey!!.public.encoded),
+            ephemeralPublicKey = cryptographyTechnique.signature().encoder()
+                .encode(asymmetricKey!!.public.encoded),
             tagNonce32Byte = KEY_32ByteNonce,
-            encryptedMessage = cryptographyTechnique.signature().encoder().encode(viewDataBinding.amount.text.toString().toByteArray())
+            encryptedMessage = cryptographyTechnique.signature().encoder()
+                .encode(viewDataBinding.amount.text.toString().toByteArray())
         )
 
         // Inflate the layout for this fragment
-        viewDataBinding.root.auth.setOnClickListener {
+        viewDataBinding.auth.setOnClickListener {
             progress_layout.visibility = View.VISIBLE
             progress_message.text =
                 getString((R.string.biometric_ap_biometric_authenticate_in_progress))
             biometricDialog.doBiometricAuthenticationBiometricPrompt(
-                activity!!,
+                requireActivity(),
                 signature = initSignature
             )
                 .subscribe({
@@ -183,7 +189,7 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
                             showToastOnUi(getString(R.string.biometric_ap_auth_success))
                             // TODO remove it just to show progress
                             activity?.runOnUiThread {
-                                viewDataBinding.root.auth.isEnabled = false
+                                viewDataBinding.auth.isEnabled = false
                                 runnable = Runnable {
                                     val dataByteArray = Gson().toJson(paymentMessage).toByteArray()
                                     // sign the message now, using signature after authentication using

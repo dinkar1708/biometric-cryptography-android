@@ -13,6 +13,19 @@ src/main/java/cryptography/biometric/di
 Data source classes-
 /src/main/java/cryptography/biometric/data/source
  
+Design MVVM
+
+Dependency Injection Design
+
+------------ApplicationComponent - Singleton (CryptographyRepository)-------------------------------------------------
+------------AndroidInjectionModule Module,  ViewModelFactoryModule Module, ApplicationModule Module , ActivityBuilderModule Module ---------------
+------------------------------SplashActivitySubcomponent------------------------MainActivitySubcomponent---------------------------------
+SplashActivity--------------------------------------    ---------------------MainActivity--------------------------------------------
+----------------------------------------------------    ---HomeFragmentSubcomponent---------------BiometricCryptographyPaymentFragmentSubcomponent------------PaymentVerificationFragmentSubcomponent----------
+
+
+
+
 ## Technology used -
 Android KTX, Architecture components help you design robust, testable and maintainable apps.Navigation
 Handle everything needed for in-app navigation

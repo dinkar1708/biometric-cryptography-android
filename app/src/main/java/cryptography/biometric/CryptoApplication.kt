@@ -9,7 +9,7 @@ import timber.log.Timber
  * Application class - initialize the values only once when application is getting started for first
  * time
  */
-open class CryptoApplication : DaggerApplication() {
+class CryptoApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
@@ -19,6 +19,7 @@ open class CryptoApplication : DaggerApplication() {
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        // Returning the app component object
         return DaggerApplicationComponent.factory().create(applicationContext)
     }
 }

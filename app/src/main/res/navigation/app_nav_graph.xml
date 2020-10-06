@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="cryptography.biometric.ui.home.HomeFragment"
+        android:name="cryptography.biometric.ui.main.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/biometricCryptographyPayment"
-        android:name="cryptography.biometric.ui.biometric.BiometricCryptographyPaymentFragment"
+        android:name="cryptography.biometric.ui.main.biometric.BiometricCryptographyPaymentFragment"
         android:label="fragment_biometric_cryptography_payment"
         tools:layout="@layout/fragment_biometric_cryptography_payment">
 
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/paymentVerificationFragment"
-        android:name="cryptography.biometric.ui.payment_verification.PaymentVerificationFragment"
+        android:name="cryptography.biometric.ui.main.verification.PaymentVerificationFragment"
         android:label="fragment_payment_verification"
         tools:layout="@layout/fragment_payment_verification">
         <action
