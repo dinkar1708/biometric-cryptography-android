@@ -1,40 +1,85 @@
-## Requirements-
-Cryptography key example.
+# Android Cryptography Biometric Module
 
-Biometric Reusable module -
+This Android project showcases a comprehensive example of integrating cryptography, biometrics, and the MVVM architecture.
+
+## Features
+
+### Cryptography Key Example
+
+Explore the cryptography key example in the following package:
+
+```
 /src/main/java/cryptography/biometric/biometrickit
+```
 
-Authentication, Sign and Signature verification fragment-
+### Biometric Reusable Module
+
+A reusable biometric module is located at:
+
+```
+/src/main/java/cryptography/biometric/biometrickit
+```
+
+### Authentication, Sign, and Signature Verification Fragment
+
+The fragment handling authentication, sign, and signature verification is available at:
+
+```
 /src/main/java/cryptography/biometric/ui/biometric/BiometricCryptographyPaymentFragment.kt
+```
 
-Dependency injection -
-src/main/java/cryptography/biometric/di
+## Dependency Injection
 
-Data source classes-
+Dependency injection is handled in the following package:
+
+```
+/src/main/java/cryptography/biometric/di
+```
+
+## Data Source Classes
+
+Data source classes are implemented in:
+
+```
 /src/main/java/cryptography/biometric/data/source
- 
-Design MVVM
+```
 
-Dependency Injection Design
+## Design Patterns
 
-------------ApplicationComponent - Singleton (CryptographyRepository)-------------------------------------------------
-------------AndroidInjectionModule Module,  ViewModelFactoryModule Module, ApplicationModule Module , ActivityBuilderModule Module ---------------
-------------------------------SplashActivitySubcomponent------------------------MainActivitySubcomponent---------------------------------
-SplashActivity--------------------------------------    ---------------------MainActivity--------------------------------------------
-----------------------------------------------------    ---HomeFragmentSubcomponent---------------BiometricCryptographyPaymentFragmentSubcomponent------------PaymentVerificationFragmentSubcomponent----------
+### MVVM Architecture
 
+The project adheres to the MVVM (Model-View-ViewModel) architectural pattern, providing a clear separation of concerns and promoting maintainability.
 
+### Dependency Injection Design
 
+The application utilizes Dagger 2 for dependency injection. Key components include:
 
-## Technology used -
-Android KTX, Architecture components help you design robust, testable and maintainable apps.Navigation
-Handle everything needed for in-app navigation
-ViewModel
-Manage UI-related data in a lifecycle-conscious way
-Data Binding
-Decoratively bind observable data to UI elements
-Write more concise, idiomatic Kotlin code
-Room
-Fluent SQLite database access
-Lifecycle
-Manage your activity and fragment lifecycle
+- **ApplicationComponent:** Singleton for `CryptographyRepository`.
+- **AndroidInjectionModule Module:** Part of Dagger Android for DI support.
+- **ViewModelFactoryModule Module:** Module for ViewModelFactory.
+- **ApplicationModule Module:** Module for application-wide dependencies.
+- **ActivityBuilderModule Module:** Module for activity-level dependencies.
+
+Subcomponents for specific features include:
+
+- **SplashActivitySubcomponent**
+- **MainActivitySubcomponent**
+- **HomeFragmentSubcomponent**
+- **BiometricCryptographyPaymentFragmentSubcomponent**
+- **PaymentVerificationFragmentSubcomponent**
+
+## Technology Used
+
+- **Android KTX:** Kotlin extensions for Android development.
+- **Architecture Components:** Robust, testable, and maintainable app architecture.
+    - **Navigation:** Handle in-app navigation.
+    - **ViewModel:** Manage UI-related data in a lifecycle-conscious way.
+    - **Data Binding:** Decoratively bind observable data to UI elements.
+    - **Room:** Fluent SQLite database access.
+    - **Lifecycle:** Manage activity and fragment lifecycle.
+
+## Getting Started
+
+To get started with this project, clone the repository and open it in Android Studio. 
+Explore the various components, follow the package structure,
+and leverage the implemented design patterns in your own projects.
