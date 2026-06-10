@@ -4,7 +4,7 @@ This Android project showcases a comprehensive example of integrating cryptograp
 
 # Screens
 
-<img width="300" height="600" alt="Screenshot_1781066563" src="https://github.com/user-attachments/assets/fd9484a6-5277-4d33-867c-430d6bb51537" />
+<img width="300" height="700" alt="Screenshot_1781066563" src="https://github.com/user-attachments/assets/fd9484a6-5277-4d33-867c-430d6bb51537" />
 
 <img width="300" height="700" alt="Screenshot_1781066564" src="https://github.com/user-attachments/assets/e47d393a-bbef-4887-a754-4107d00e3cdd" />
 <img width="300" height="700" alt="Screenshot_1781066581" src="https://github.com/user-attachments/assets/d7897d78-2505-4bc9-abc0-961c5d9351f8" />
