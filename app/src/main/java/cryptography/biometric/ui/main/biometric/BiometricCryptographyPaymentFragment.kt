@@ -27,8 +27,6 @@ import cryptography.biometric.ui.main.biometric.data.PaymentData
 import cryptography.biometric.ui.main.biometric.data.PaymentMessage
 import cryptography.biometric.ui.main.biometric.data.VerifySignatureRequest
 import cryptography.biometric.viewmodels.ViewModelProviderFactory
-import kotlinx.android.synthetic.main.fragment_biometric_cryptography_payment.*
-import kotlinx.android.synthetic.main.progress_layout.*
 import timber.log.Timber
 import java.security.KeyPair
 import javax.inject.Inject
@@ -105,8 +103,8 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
             val result = it ?: return@Observer
             when {
                 result.loading != null -> {
-                    progress_layout.visibility = View.VISIBLE
-                    progress_message.text = getString(R.string.biometric_ap_verifying_signature)
+                    viewDataBinding.progressLayout.root.visibility = View.VISIBLE
+                    viewDataBinding.progressLayout.progressMessage.text = getString(R.string.biometric_ap_verifying_signature)
                 }
                 result.successObject != null -> {
                     // TODO remove it - this is just to display little late response from server
@@ -129,7 +127,7 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
                 }
                 else -> {
 
-                    progress_layout.visibility = View.GONE
+                    viewDataBinding.progressLayout.root.visibility = View.GONE
                     result.error?.let { desc -> showToastOnUi(desc) }
                 }
             }
@@ -166,8 +164,8 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
 
         // Inflate the layout for this fragment
         viewDataBinding.auth.setOnClickListener {
-            progress_layout.visibility = View.VISIBLE
-            progress_message.text =
+            viewDataBinding.progressLayout.root.visibility = View.VISIBLE
+            viewDataBinding.progressLayout.progressMessage.text =
                 getString((R.string.biometric_ap_biometric_authenticate_in_progress))
             biometricDialog.doBiometricAuthenticationBiometricPrompt(
                 requireActivity(),
@@ -179,7 +177,7 @@ class BiometricCryptographyPaymentFragment : BaseFragment() {
                         // handle error message
                         it.errorMessage != null -> {
                             activity?.runOnUiThread {
-                                progress_layout.visibility = View.GONE
+                                viewDataBinding.progressLayout.root.visibility = View.GONE
                                 showToastOnUi(it.errorMessage!!)
                             }
                         }

@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--application color-->
-    <color name="colorPrimary">#FFCB74</color>
-    <color name="colorPrimaryDark">@color/orange_red</color>
-    <color name="colorAccent">#ff9f80</color>
+    <!--Modern Material Design Color Palette-->
+
+    <!-- Primary Colors - Deep Blue -->
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorPrimaryLight">#42A5F5</color>
+
+    <!-- Accent Color - Vibrant Teal -->
+    <color name="colorAccent">#00BCD4</color>
+
+    <!-- Legacy colors (kept for compatibility) -->
     <color name="orange_red">#FF8B63</color>
-    <color name="white">#ffffff</color>
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textHint">#BDBDBD</color>
+
+    <!-- Background Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="background">#FAFAFA</color>
+    <color name="cardBackground">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+
+    <!-- Legacy -->
     <color name="mine_shaft_app_default">#333333</color>
 </resources>

@@ -9,9 +9,9 @@ import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cryptography.biometric.R
+import cryptography.biometric.databinding.FragmentPaymentVerificationBinding
 import cryptography.biometric.ext.setTitle
 import cryptography.biometric.shared.BaseFragment
-import kotlinx.android.synthetic.main.fragment_payment_verification.view.*
 
 /**
  * Payment and signature verification all is done, now display the transaction details.
@@ -23,18 +23,18 @@ class PaymentVerificationFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         setTitle(title = R.string.payment_verification_title, isEnableBackButton = false)
 
-        // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_payment_verification, container, false)
-        v.amount.text = String.format(getString(R.string.amount_format), args.amount)
-        v.card_number.text =
+        // Inflate the layout for this fragment using ViewBinding
+        val binding = FragmentPaymentVerificationBinding.inflate(inflater, container, false)
+        binding.amount.text = String.format(getString(R.string.amount_format), args.amount)
+        binding.cardNumber.text =
             String.format(getString(R.string.card_number_format), args.cardLast4Digit)
-        v.user_id.text = args.userId
+        binding.userId.text = args.userId
 
-        v.done.setOnClickListener {
+        binding.done.setOnClickListener {
             findNavController().navigate(R.id.action_paymentVerificationFragment_to_homeFragment)
         }
 
@@ -42,6 +42,6 @@ class PaymentVerificationFragment : BaseFragment() {
             activity?.finish()
         }
 
-        return v
+        return binding.root
     }
 }

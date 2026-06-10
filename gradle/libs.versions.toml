@@ -1,0 +1,92 @@
+[versions]
+androidGradlePlugin = "8.3.2"
+kotlin = "1.9.25"
+compileSdk = "34"
+minSdk = "23"
+targetSdk = "34"
+
+# AndroidX
+androidxAppcompat = "1.7.0"
+androidxCoreKtx = "1.13.1"
+androidxConstraintLayout = "2.1.4"
+androidxLegacy = "1.0.0"
+androidxBiometric = "1.1.0"
+androidxNavigation = "2.7.7"
+androidxRoom = "2.6.1"
+
+# Testing
+junit = "4.13.2"
+androidxTestExtJunit = "1.2.1"
+androidxTestEspresso = "3.6.1"
+androidxTestCore = "1.6.1"
+androidxTestRunner = "1.6.1"
+androidxTestRules = "1.6.1"
+androidxTestOrchestrator = "1.5.0"
+androidxTestExtTruth = "1.6.0"
+androidxArchCoreTesting = "2.2.0"
+googleTruth = "1.4.4"
+
+# Dagger
+dagger = "2.51.1"
+
+# Timber
+timber = "5.0.1"
+
+# Retrofit
+retrofit = "2.11.0"
+okhttp = "4.12.0"
+gson = "2.11.0"
+
+[libraries]
+# AndroidX
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintLayout" }
+androidx-legacy-support = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidxLegacy" }
+androidx-biometric = { group = "androidx.biometric", name = "biometric", version.ref = "androidxBiometric" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigation" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation" }
+
+# Room
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoom" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidxRoom" }
+androidx-room-rxjava2 = { group = "androidx.room", name = "room-rxjava2", version.ref = "androidxRoom" }
+
+# Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspresso" }
+androidx-test-espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "androidxTestEspresso" }
+androidx-test-espresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "androidxTestEspresso" }
+androidx-test-espresso-accessibility = { group = "androidx.test.espresso", name = "espresso-accessibility", version.ref = "androidxTestEspresso" }
+androidx-test-espresso-web = { group = "androidx.test.espresso", name = "espresso-web", version.ref = "androidxTestEspresso" }
+androidx-test-espresso-idling-concurrent = { group = "androidx.test.espresso.idling", name = "idling-concurrent", version.ref = "androidxTestEspresso" }
+androidx-test-espresso-idling-resource = { group = "androidx.test.espresso", name = "espresso-idling-resource", version.ref = "androidxTestEspresso" }
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "androidxTestRules" }
+androidx-test-orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "androidxTestOrchestrator" }
+androidx-test-ext-truth = { group = "androidx.test.ext", name = "truth", version.ref = "androidxTestExtTruth" }
+androidx-arch-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "androidxArchCoreTesting" }
+google-truth = { group = "com.google.truth", name = "truth", version.ref = "googleTruth" }
+
+# Dagger
+dagger-android = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
+dagger-android-support = { group = "com.google.dagger", name = "dagger-android-support", version.ref = "dagger" }
+dagger-android-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger" }
+
+# Timber
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+
+# Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-adapter-rxjava2 = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidxNavigation" }

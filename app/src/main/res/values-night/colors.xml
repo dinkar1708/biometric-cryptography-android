@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Dark Mode Material Design Color Palette-->
+
+    <!-- Primary Colors - Lighter Blue for Dark Mode -->
+    <color name="colorPrimary">#42A5F5</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorPrimaryLight">#64B5F6</color>
+
+    <!-- Accent Color - Bright Teal -->
+    <color name="colorAccent">#26C6DA</color>
+
+    <!-- Text Colors for Dark Mode -->
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#B0BEC5</color>
+    <color name="textHint">#78909C</color>
+
+    <!-- Background Colors for Dark Mode -->
+    <color name="white">#FFFFFF</color>
+    <color name="background">#121212</color>
+    <color name="cardBackground">#1E1E1E</color>
+
+    <!-- Status Colors -->
+    <color name="success">#66BB6A</color>
+    <color name="error">#EF5350</color>
+    <color name="warning">#FFA726</color>
+</resources>

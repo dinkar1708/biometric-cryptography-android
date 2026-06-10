@@ -1,22 +1,36 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme with Material Design -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <!-- Primary brand colors -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:textColor">@color/mine_shaft_app_default</item>
-        <!--app label font family-->
-        <item name="android:fontFamily">Hiragino Sans</item>
+        <!-- Text colors -->
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:textColorHint">@color/textHint</item>
 
-        <!--for all xml background use white color-->
-        <item name="android:windowBackground">@color/white</item>
-        <item name="android:colorBackground">@color/white</item>
+        <!-- Font family -->
+        <item name="android:fontFamily">sans-serif</item>
 
-        <item name="android:windowLightStatusBar">true</item>
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
 
+        <!-- Status bar - same color as action bar -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Action bar elevation -->
+        <item name="elevation">4dp</item>
+
+        <!-- Window properties for smooth transitions -->
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
     </style>
 
     <!--text style-->
@@ -42,7 +56,24 @@
     <style name="Button.White" parent="Medium.TextStyle">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:background">@drawable/solid_roundedrect_gradient_red</item>
+        <item name="android:background">@drawable/button_primary_ripple</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!--Modern Button Styles-->
+    <style name="Button.Primary" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/button_primary_ripple</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 
 </resources>

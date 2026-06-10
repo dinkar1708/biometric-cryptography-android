@@ -15,6 +15,6 @@ class SplashModule {
     @SplashScope
     @Provides
     fun provideSplashTime(): SplashModel {
-        return SplashModel(1 * 1000)
+        return SplashModel(3 * 1000)
     }
 }

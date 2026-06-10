@@ -21,8 +21,6 @@ import cryptography.biometric.shared.BaseFragment
 import cryptography.biometric.ui.main.home.data.GetUserTokenRequest
 import cryptography.biometric.ui.main.home.data.GetUserTokenResponse
 import cryptography.biometric.viewmodels.ViewModelProviderFactory
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.progress_layout.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -70,7 +68,7 @@ class HomeFragment : BaseFragment() {
             userTokenResponse?.let {
                 findNavController().navigate(
                     HomeFragmentDirections.actionHomeFragmentToBiometricCryptographyPayment(
-                        amount = amount.text.toString().trim(),
+                        amount = viewDataBinding.amount.text.toString().trim(),
                         cardLast4Digit = it.cardLast4Digit,
                         userId = viewDataBinding.spinner.selectedItem as String,
                         token = it.token
@@ -93,8 +91,8 @@ class HomeFragment : BaseFragment() {
             userTokenResponse = result.successObject
             when {
                 result.loading != null -> {
-                    progress_layout.visibility = View.VISIBLE
-                    progress_message.text = getString(R.string.home_receiving_token_from_server)
+                    viewDataBinding.progressLayout.root.visibility = View.VISIBLE
+                    viewDataBinding.progressLayout.progressMessage.text = getString(R.string.home_receiving_token_from_server)
                 }
                 userTokenResponse != null -> {
                     activity?.runOnUiThread {
@@ -105,7 +103,7 @@ class HomeFragment : BaseFragment() {
                                     userTokenResponse!!.cardLast4Digit
                                 )
                             )
-                            progress_layout.visibility = View.GONE
+                            viewDataBinding.progressLayout.root.visibility = View.GONE
                             viewDataBinding.next.isEnabled = true
                         }
                         handler.postDelayed(
@@ -116,7 +114,7 @@ class HomeFragment : BaseFragment() {
                 }
                 else -> {
 
-                    progress_layout.visibility = View.GONE
+                    viewDataBinding.progressLayout.root.visibility = View.GONE
                     result.error?.let { desc -> showToastOnUi(desc) }
                 }
             }
